@@ -5,10 +5,10 @@ pub type Respondee<Response, Error> = oneshot::Receiver<Result<Response, Error>>
 
 pub struct TenoriteRequest<Request, Response, Error> {
     pub request: Request,
-    pub client: Responder<Response, Error>
+    pub client: Responder<Response, Error>,
 }
 
-impl <Request, Response, Error> TenoriteRequest<Request, Response, Error> {
+impl<Request, Response, Error> TenoriteRequest<Request, Response, Error> {
     pub fn new(request: Request) -> (Self, Respondee<Response, Error>) {
         let (sender, receiver) = make_responder_channel();
         (
@@ -21,6 +21,7 @@ impl <Request, Response, Error> TenoriteRequest<Request, Response, Error> {
     }
 }
 
-fn make_responder_channel<Response, Error>() -> (Responder<Response, Error>, Respondee<Response, Error>) {
+fn make_responder_channel<Response, Error>(
+) -> (Responder<Response, Error>, Respondee<Response, Error>) {
     oneshot::channel()
 }

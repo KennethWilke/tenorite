@@ -11,5 +11,5 @@ pub use service::TenoriteService;
 pub use task::TenoriteTask;
 
 // Re-exports
-pub use tokio::sync::mpsc::Receiver;
 pub use async_trait::async_trait;
+pub use tokio::sync::mpsc::Receiver;
