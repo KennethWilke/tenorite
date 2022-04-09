@@ -72,7 +72,8 @@ example project, it fully implements the "HashMap-as-a-Service" worker:
 pub struct ExampleWorker {}
 
 #[async_trait]
-impl TenoriteWorker<ExampleRequest, ExampleResponse, ExampleError, ExampleConfig>
+impl TenoriteWorker<ExampleRequest, ExampleResponse, ExampleError,
+                    ExampleConfig>
     for ExampleWorker
 {
     async fn task(
@@ -82,7 +83,8 @@ impl TenoriteWorker<ExampleRequest, ExampleResponse, ExampleError, ExampleConfig
         mut config: ExampleConfig,
     ) {
         while let Some(request) = receiver.recv().await {
-            println!("[ExampleTask] Received Request: {:?}", request.request);
+            println!("[ExampleTask] Received Request: {:?}",
+                     request.request);
 
             use ExampleRequest::*;
             use ExampleResponse::*;
@@ -120,7 +122,8 @@ types!
 ```rust
 pub struct ExampleService {}
 
-impl TenoriteService<ExampleRequest, ExampleResponse, ExampleError, ExampleWorker, ExampleConfig>
+impl TenoriteService<ExampleRequest, ExampleResponse, ExampleError,
+                     ExampleWorker, ExampleConfig>
     for ExampleService
 {
 }
