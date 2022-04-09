@@ -1,8 +1,8 @@
 use tokio::sync::mpsc;
 use tokio::task::JoinHandle;
 
-use super::TenoriteCaller;
-use super::TenoriteWorker;
+use super::caller::TenoriteCaller;
+use super::worker::TenoriteWorker;
 
 /// Binds together the generic type components into the service
 pub trait TenoriteService<Request, Response, Error, Task, TaskConfig>

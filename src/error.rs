@@ -1,6 +1,6 @@
 use tokio::sync::{mpsc, oneshot};
 
-use crate::TenoriteRequest;
+use crate::request::TenoriteRequest;
 
 /// This is the error type returned by [`super::TenoriteCaller::send_request`]
 pub enum TenoriteError<Request, Response, Error> {

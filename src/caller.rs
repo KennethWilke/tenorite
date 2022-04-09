@@ -1,5 +1,5 @@
-use super::TenoriteError;
-use super::TenoriteRequest;
+use super::error::TenoriteError;
+use super::request::TenoriteRequest;
 use tokio::sync::mpsc;
 
 /// Holds the client side handle of the communication
