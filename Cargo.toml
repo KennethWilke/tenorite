@@ -9,7 +9,7 @@ readme = "README.md"
 repository = "https://github.com/KennethWilke/tenorite"
 license = "MIT"
 keywords = ["async", "tokio", "concurrency", "utility"]
-categories = ["Asynchronous", "Concurrency", "Rust patterns"]
+categories = ["asynchronous", "concurrency", "rust-patterns"]
 
 [dependencies]
 tokio = { version = "1.17.0", features = ["sync", "rt"] }
