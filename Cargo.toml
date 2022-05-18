@@ -14,3 +14,4 @@ categories = ["Asynchronous", "Concurrency", "Rust patterns"]
 [dependencies]
 tokio = { version = "1.17.0", features = ["sync", "rt"] }
 async-trait = "0.1.53"
+thiserror = "1.0.31"

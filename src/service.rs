@@ -1,3 +1,4 @@
+use std::fmt::Debug;
 use tokio::sync::mpsc;
 use tokio::task::JoinHandle;
 
@@ -7,9 +8,9 @@ use super::worker::TenoriteWorker;
 /// Binds together the generic type components into the service
 pub trait TenoriteService<Request, Response, Error, Task, TaskConfig>
 where
-    Request: Send + 'static,
-    Response: Send + 'static,
-    Error: Send + 'static,
+    Request: Send + Debug + 'static,
+    Response: Send + Debug + 'static,
+    Error: Send + Debug + 'static,
     Task: TenoriteWorker<Request, Response, Error, TaskConfig>,
     TaskConfig: Send + 'static,
 {
