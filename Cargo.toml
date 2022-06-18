@@ -1,6 +1,6 @@
 [package]
 name = "tenorite"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Kenneth Wilke <kenneth.wilke@gmail.com>"]
 edition = "2021"
 description = "A concurrency abstraction library. Provides a client-server model for asynchronous workers"
