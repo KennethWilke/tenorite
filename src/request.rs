@@ -8,9 +8,10 @@ pub type Respondee<Response, Error> = oneshot::Receiver<Result<Response, Error>>
 
 /// Encapsulation for requests from client to service
 pub struct TenoriteRequest<Request, Response, Error>
-    where Request: Debug,
-          Response: Debug,
-          Error: Debug,
+where
+    Request: Debug,
+    Response: Debug,
+    Error: Debug,
 {
     /// Request from the client
     pub request: Request,
@@ -19,9 +20,10 @@ pub struct TenoriteRequest<Request, Response, Error>
 }
 
 impl<Request, Response, Error> Debug for TenoriteRequest<Request, Response, Error>
-    where Request: Debug,
-          Response: Debug,
-          Error: Debug,
+where
+    Request: Debug,
+    Response: Debug,
+    Error: Debug,
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "TenoriteRequest {{ {:?} }}", self.request)
@@ -29,9 +31,10 @@ impl<Request, Response, Error> Debug for TenoriteRequest<Request, Response, Erro
 }
 
 impl<Request, Response, Error> TenoriteRequest<Request, Response, Error>
-    where Request: Debug,
-          Response: Debug,
-          Error: Debug,
+where
+    Request: Debug,
+    Response: Debug,
+    Error: Debug,
 {
     /// Generates [`oneshot`] channel pair, effectively encoding a callback
     /// handle into the request

@@ -6,6 +6,8 @@ pub mod caller;
 /// The [`TenoriteError`] enumeration
 pub mod error;
 
+pub mod macros;
+
 /// The [`TenoriteRequest`] request encapsulation structure
 pub mod request;
 

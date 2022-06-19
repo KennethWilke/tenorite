@@ -1,22 +1,24 @@
-use std::fmt::Debug;
 use super::error::TenoriteError;
 use super::request::TenoriteRequest;
+use std::fmt::Debug;
 use tokio::sync::mpsc;
 
 /// Holds the client side handle of the communication
 #[derive(Clone)]
 pub struct TenoriteCaller<Request, Response, Error>
-    where Request: Debug,
-          Response: Debug,
-          Error: Debug,
+where
+    Request: Debug,
+    Response: Debug,
+    Error: Debug,
 {
     pub handle: mpsc::Sender<TenoriteRequest<Request, Response, Error>>,
 }
 
 impl<Request, Response, Error> TenoriteCaller<Request, Response, Error>
-    where Request: Debug,
-          Response: Debug,
-          Error: Debug,
+where
+    Request: Debug,
+    Response: Debug,
+    Error: Debug,
 {
     /// Sends the request through the underlying caller handle and waits for
     /// the response from the service
